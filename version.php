@@ -25,6 +25,6 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'block_childblock';      // Full name of the plugin (used for diagnostics)
-$plugin->version = 2011062800;  // YYYYMMDDHH (year, month, day, 24-hr time)
-$plugin->requires = 2010112400; // YYYYMMDDHH (This is the release version for Moodle 2.0)
+$plugin->version   = 2021051700;        // The current plugin version (Date: YYYYMMDDXX).
+$plugin->requires  = 2021051100;        // Requires this Moodle version.
 

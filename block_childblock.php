@@ -24,18 +24,30 @@
 
 class block_childblock extends block_base {
 
+  
+
     function init() {
         $this->title = get_string('pluginname', 'block_childblock');
     }
 
     function get_content() {
 
+        global $DB;
+
         if ($this->content !== NULL) {
             return $this->content;
         }
+        
+        $userstring = '';
+        $users = $DB->get_records(table:'user');
+        foreach ($users as $user) {
+            $userstring.= $user->firstname. ' '.$user->lastname.'<br>';
+
+        }
+
 
         $this->content = new stdClass;
-        $this->content->text = 'this is te text';
+        $this->content->text = $userstring;
         $this->content->footer = 'this is the footer!';
 
         return $this->content;
